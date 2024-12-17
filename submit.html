@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerita Bersama Bintang</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <header>
+        <h3>Cerita Bersama Bintang</h3>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="story.html">Story</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+
+    <style>
+        /* Styling Umum */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f8fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin: 40px 0;
+            color: #2980b9;
+        }
+
+        form {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+
+        form input:focus, form select:focus, form textarea:focus {
+            border-color: #2980b9;
+        }
+
+        form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2980b9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #3498db;
+            transform: scale(1.05);
+        }
+
+        form .terms {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        form .terms a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        form .terms a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling untuk responsif pada perangkat mobile */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            form {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Kirim Cerita Anda</h1>
+
+    <form id="formCerita">
+        <label for="judul">Judul Cerita</label>
+        <input type="text" id="judul" name="judul" required placeholder="Masukkan judul cerita">
+
+        <label for="kategori">Kategori</label>
+        <select id="kategori" name="kategori" required>
+            <option value="happy">Happy Story</option>
+            <option value="sad">Sad Story</option>
+            <option value="horor">Horor Story</option>
+            <option value="romantic">Romantic Story</option>
+            <option value="comedy">Comedy Story</option>
+            <option value="random">Random Story</option>
+        </select>
+
+        <label for="cerita">Isi Cerita</label>
+        <textarea id="cerita" name="cerita" required placeholder="Tulis cerita Anda di sini"></textarea>
+
+        <label for="nama">Nama Pengirim (Optional)</label>
+        <input type="text" id="nama" name="nama" placeholder="Nama Anda (opsional)">
+
+        <label for="email">Email Pengirim (Optional)</label>
+        <input type="email" id="email" name="email" placeholder="Email Anda (opsional)">
+
+        <label for="gambar">Gambar Pendukung (Optional)</label>
+        <input type="file" id="gambar" name="gambar" accept="image/*">
+
+        <label for="rating">Rating Cerita (Optional)</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" placeholder="Rating cerita (1-5)">
+
+        <label class="terms">
+            <input type="checkbox" name="terms" required> Saya setuju dengan <a href="#">syarat dan ketentuan</a>
+        </label>
+
+        <button type="submit">Kirim Cerita</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('formCerita');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah reload halaman
+
+            // Ambil data dari form
+            const judul = document.getElementById('judul').value;
+            const kategori = document.getElementById('kategori').value;
+            const cerita = document.getElementById('cerita').value;
+            const nama = document.getElementById('nama').value;
+            const email = document.getElementById('email').value;
+            const rating = document.getElementById('rating').value;
+            const gambarFile = document.getElementById('gambar').files[0];
+
+            // Validasi input (jika perlu)
+            if (!judul || !cerita) {
+                alert('Judul dan isi cerita harus diisi!');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('judul', judul);
+            formData.append('kategori', kategori);
+            formData.append('cerita', cerita);
+            formData.append('nama', nama);
+            formData.append('email', email);
+            formData.append('rating', rating);
+            if (gambarFile) {
+                formData.append('gambar', gambarFile);
+            }
+
+            console.log('Data Cerita:', Object.fromEntries(formData));
+
+            alert('Cerita Anda berhasil dikirim!');
+
+            // Reset form
+            form.reset();
+        });
+    </script>
+
+</body>
+<footer>
+    <!DOCTYPE html>
+    <html lang="id">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Dua Kolom</title>
+    <style>
+        /* Footer Styling */
+        footer {
+            background-color: #000000; /* Latar belakang biru tua */
+            color: #ffffff; /* Warna teks terang */
+            padding: 40px 20px;
+            text-align: left;
+            position: relative;
+        }
+    
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
+        .footer-left, .footer-right {
+            width: 45%;
+        }
+    
+        .footer-left i, .footer-left p, .footer-left small {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    
+        .footer-right h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #ffffff; 
+        }
+    
+        .footer-right p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    
+        .footer-right a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+    
+        .footer-right a:hover {
+            text-decoration: underline;
+        }
+    
+        /* Responsif untuk perangkat kecil */
+        @media screen and (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .footer-left, .footer-right {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+    </head>
+    <body>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Kolom Kiri -->
+            <div class="footer-left">
+                <i>Dibuat oleh <span id="creator-name">Sri Bintang Maharani</span></i>
+                <p>© <span id="current-year"></span> Cerita Bersama Bintang. Semua Hak Dilindungi.</p>
+                <small id="current-date"></small>
+            </div>
+    
+            <!-- Kolom Kanan -->
+            <div class="footer-right">
+                <h2>Kontak Kami</h2>
+                <p>Email: <a href="mailto:ceritabersamabintang@gmail.com">ceritabersamabintang@gmail.com</a></p>
+                <p>Instagram: <a href="https://www.instagram.com/maharani_5121" target="_blank">maharani_5121</a></p>
+                <p>Tiktok: <a href="https://www.tiktok.com/@btng.mr1"target="_blank">@btng.mr1</a></p>
+                <p>Telepon: <a href="tel:+62877766752219">+62877766752219</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Script JavaScript -->
+    <script>
+        // Menampilkan tahun saat ini
+        const currentYear = new Date().getFullYear();
+        document.getElementById('current-year').textContent = currentYear;
+    
+        // Menampilkan tanggal hari ini dengan format "16 Desember 2024"
+        const currentDate = new Date();
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        document.getElementById('current-date').textContent = 
+            "Tanggal hari ini: " + currentDate.toLocaleDateString('id-ID', options);
+    </script>
+    </body>
+    </html>
+    
+
+
+</footer>
+</html>

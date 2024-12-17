@@ -1,0 +1,156 @@
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerita Bersama Bintang</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <header>
+        <h3>Cerita Bersama Bintang</h3>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="story.html">Story</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-info">
+            <h2>Hubungi Kami</h2>
+            <p><strong>Alamat:</strong> Jl. Contoh No. 123, Kota Padang, Indonesia</p>
+            <p><strong>Email:</strong> <a href="mailto:ceritabersamabintang@gmail.com">ceritabersamabintang@gmail.com</a></p>
+            <p><strong>Telepon/WhatsApp:</strong> <a href="tel:+62877766752219">087766752219</a></p>
+            <p><strong>Ikuti kami di:</strong> 
+                <a href="https://www.instagram.com/maharani_5121" target="_blank">Instagram</a> | 
+                <a href="https://www.tiktok.com/@btng.mr1" target="_blank">Tiktok</a>
+            </p>
+        </section>
+
+        <section class="faq">
+            <h3>Pertanyaan yang Sering Diajukan</h3>
+            <p><strong>Tanya:</strong> Bagaimana cara mengirim cerita ke website ini?</p>
+            <p><strong>Jawab:</strong> Anda dapat mengirimkan cerita dengan klik Kirim Cerita atau menghubungi kami melalui email.</p>
+
+            <p><strong>Siap untuk memulai?</strong> Hubungi kami melalui email atau klik Kirim Cerita di bawah ini!</p>
+        </section>
+
+      
+
+        <section class="cta">
+            <a href="submit.html" class="cta-button">Kirim Ceritamu</a>
+        </section>
+    </main>
+
+
+
+</body>
+<footer>
+    <!DOCTYPE html>
+    <html lang="id">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Dua Kolom</title>
+    <style>
+        /* Footer Styling */
+        footer {
+            background-color: #000000; /* Latar belakang biru tua */
+            color: #ffffff; /* Warna teks terang */
+            padding: 40px 20px;
+            text-align: left;
+            position: relative;
+        }
+    
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
+        .footer-left, .footer-right {
+            width: 45%;
+        }
+    
+        .footer-left i, .footer-left p, .footer-left small {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    
+        .footer-right h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #ffffff; 
+        }
+    
+        .footer-right p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    
+        .footer-right a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+    
+        .footer-right a:hover {
+            text-decoration: underline;
+        }
+    
+        /* Responsif untuk perangkat kecil */
+        @media screen and (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .footer-left, .footer-right {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+    </head>
+    <body>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Kolom Kiri -->
+            <div class="footer-left">
+                <i>Dibuat oleh <span id="creator-name">Sri Bintang Maharani</span></i>
+                <p>© <span id="current-year"></span> Cerita Bersama Bintang. Semua Hak Dilindungi.</p>
+                <small id="current-date"></small>
+            </div>
+    
+            <!-- Kolom Kanan -->
+            <div class="footer-right">
+                <h2>Kontak Kami</h2>
+                <p>Email: <a href="mailto:ceritabersamabintang@gmail.com">ceritabersamabintang@gmail.com</a></p>
+                <p>Instagram: <a href="https://www.instagram.com/maharani_5121" target="_blank">maharani_5121</a></p>
+                <p>Tiktok: <a href="https://www.tiktok.com/@btng.mr1"target="_blank">@btng.mr1</a></p>
+                <p>Telepon: <a href="tel:+62877766752219">+62877766752219</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Script JavaScript -->
+    <script>
+        // Menampilkan tahun saat ini
+        const currentYear = new Date().getFullYear();
+        document.getElementById('current-year').textContent = currentYear;
+    
+        // Menampilkan tanggal hari ini dengan format "16 Desember 2024"
+        const currentDate = new Date();
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        document.getElementById('current-date').textContent = 
+            "Tanggal hari ini: " + currentDate.toLocaleDateString('id-ID', options);
+    </script>
+    </body>
+    </html>
+    
+
+</footer>
+</html>

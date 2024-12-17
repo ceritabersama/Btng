@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerita Bersama Bintang</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <h3>Cerita Bersama Bintang</h3>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="story.html">Story</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Tentang Cerita Bersama Bintang</h2>
+        <p>Cerita Bersama Bintang adalah sebuah platform yang menyediakan ruang bagi siapa saja yang ingin berbagi pengalaman hidup, inspirasi, serta pelajaran berharga dalam bentuk tulisan. Situs ini didirikan untuk menghubungkan orang-orang dari berbagai latar belakang yang memiliki kisah dan pemikiran berharga yang layak untuk dibagikan.</p>
+        <p>Melalui Cerita Bersama Bintang, pengunjung dapat mengirimkan cerita mereka sendiri, membaca pengalaman orang lain, dan berinteraksi dalam komunitas yang saling mendukung. Platform ini bertujuan untuk menjadi sumber inspirasi, hiburan, serta pembelajaran yang dapat memberikan manfaat bagi setiap pembacanya.</p>
+    </section>
+
+    <section>
+        <h2>Bagaimana Kami Memulai</h2>
+        <p>Website ini lahir dari keinginan saya, Sri Bintang Maharani, untuk menyediakan ruang bagi siapa saja yang ingin berbagi kisah dan pengalaman hidup. Sebagai seorang mahasiswa yang menyukai literasi, saya ingin membantu orang lain mengekspresikan cerita mereka melalui kata-kata.</p>
+    </section>
+
+    <section>
+        <h2>Visi Kami</h2>
+        <p>Menjadi platform terdepan dalam menyebarkan cerita-cerita inspiratif yang menghubungkan hati banyak orang.</p>
+    </section>
+
+    <section>
+        <h2>Misi Kami</h2>
+        <ul>
+            <li>Menyediakan wadah aman untuk berbagi kisah pribadi dan karya sastra.</li>
+            <li>Menginspirasi melalui cerita-cerita nyata dari berbagai latar belakang.</li>
+            <li>Mendorong kreativitas dan kecintaan terhadap literasi.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Siapa di Balik Cerita Bersama Bintang?</h2>
+        <img src="foto-bintang.jpg" alt="Sri Bintang Maharani">
+        <p><strong>Sri Bintang Maharani</strong> - Mahasiswa Ilmu Perpustakaan di Universitas Islam Negeri Imam Bonjol Padang. Saya memiliki semangat untuk mendukung literasi dan berbagi cerita dari berbagai perspektif. Cerita Bersama Bintang adalah mimpi saya yang menjadi kenyataan.</p>
+    </section>
+
+    <section>
+        <h2>Bergabung dengan Kami!</h2>
+        <p>Siap berbagi cerita Anda? Klik <a href="submit.html" class="cta-button">Kirim Cerita</a>.</p>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+        document.getElementById('header').innerHTML = `<header><h1>Cerita Bersama Bintang</h1></header>`;
+        document.getElementById('footer').innerHTML = `<footer><p>&copy; 2024 Cerita Bersama Bintang. Hak cipta dilindungi undang-undang.</p></footer>`;
+    </script>
+</body>
+<footer>
+    <!DOCTYPE html>
+    <html lang="id">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Dua Kolom</title>
+    <style>
+        /* Footer Styling */
+        footer {
+            background-color: #000000; /* Latar belakang biru tua */
+            color: #ffffff; /* Warna teks terang */
+            padding: 40px 20px;
+            text-align: left;
+            position: relative;
+        }
+    
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
+        .footer-left, .footer-right {
+            width: 45%;
+        }
+    
+        .footer-left i, .footer-left p, .footer-left small {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    
+        .footer-right h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #ffffff; 
+        }
+    
+        .footer-right p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    
+        .footer-right a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+    
+        .footer-right a:hover {
+            text-decoration: underline;
+        }
+    
+        /* Responsif untuk perangkat kecil */
+        @media screen and (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .footer-left, .footer-right {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+    </head>
+    <body>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Kolom Kiri -->
+            <div class="footer-left">
+                <i>Dibuat oleh <span id="creator-name">Sri Bintang Maharani</span></i>
+                <p>© <span id="current-year"></span> Cerita Bersama Bintang. Semua Hak Dilindungi.</p>
+                <small id="current-date"></small>
+            </div>
+    
+            <!-- Kolom Kanan -->
+            <div class="footer-right">
+                <h2>Kontak Kami</h2>
+                <p>Email: <a href="mailto:ceritabersamabintang@gmail.com">ceritabersamabintang@gmail.com</a></p>
+                <p>Instagram: <a href="https://www.instagram.com/maharani_5121" target="_blank">maharani_5121</a></p>
+                <p>Tiktok: <a href="https://www.tiktok.com/@btng.mr1"target="_blank">@btng.mr1</a></p>
+                <p>Telepon: <a href="tel:+62877766752219">+62877766752219</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Script JavaScript -->
+    <script>
+        // Menampilkan tahun saat ini
+        const currentYear = new Date().getFullYear();
+        document.getElementById('current-year').textContent = currentYear;
+    
+        // Menampilkan tanggal hari ini dengan format "16 Desember 2024"
+        const currentDate = new Date();
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        document.getElementById('current-date').textContent = 
+            "Tanggal hari ini: " + currentDate.toLocaleDateString('id-ID', options);
+    </script>
+    </body>
+    </html>
+</footer>    
+</html>
